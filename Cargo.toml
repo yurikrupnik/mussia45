@@ -23,7 +23,7 @@ strum = { version = "0.26", features = ["derive"] }
 anyhow = '1.0'
 axum = { version = '0.7', features = ['default', 'tracing'] }
 futures-executor = { version = "0.3", features = ["default"] }
-axum-extra = { version = '0.9', features = ['typed-header'] }
+axum-extra = { version = '0.10', features = ['typed-header'] }
 http = { version = "1.2", features = ["default"] }
 tower-service = { version = "0.3" }
 clap = { version = "4.5", features = ['derive'] }
