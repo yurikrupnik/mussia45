@@ -3,8 +3,31 @@ name = "alfred_api"
 version = "0.1.0"
 edition = "2021"
 
+[[bin]]
+name = "example-websockets"
+path = "src/main.rs"
+
+[[bin]]
+name = "example-client"
+path = "src/client.rs"
 
 [dependencies]
+axum = { workspace = true, features = ["ws"] }
+#log = "0.4.22"
+#http = "1.2.0"
+tokio.workspace = true
+tracing.workspace = true
+anyhow.workspace = true
+headers.workspace = true
+reqwest.workspace = true
+serde.workspace = true
+tracing-subscriber.workspace = true
+axum-extra.workspace = true
+tower-http = { workspace = true, features = ["fs"] }
+futures = "0.3.31"
+futures-util = "0.3.31"
+tokio-tungstenite = "0.26.1"
+tungstenite = "0.26.1"
 
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

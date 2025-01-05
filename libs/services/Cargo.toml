@@ -1,0 +1,35 @@
+[package]
+name = "services"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+proc_macros = { workspace = true }
+general = { workspace = true }
+#axum_utils = { workspace = true }
+#models = { workspace = true }
+#envs = { workspace = true }
+axum = { workspace = true }
+tracing = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }
+serde_json = { workspace = true }
+bb8 = { workspace = true, optional = true }
+bb8-redis = { workspace = true, optional = true }
+redis = { workspace = true, optional = true }
+anyhow = { workspace = true }
+tokio = { workspace = true }
+sqlx = { workspace = true, optional = true }
+influxdb2 = { workspace = true, optional = true }
+#influxdb2-derive.workspace = true
+#chrono.workspace = true
+mongodb = { workspace = true, optional = true }
+
+[features]
+#default = ["proc_macros", "general", "axum", "tracing", "serde", "thiserror", "serde_json", "bb8", "bb8-redis", "redis", "mongodb", "tokio", "sqlx", "influxdb2", "influxdb2-derive", "chrono"]
+mongo = ["dep:mongodb"]
+sql = ["dep:sqlx"]
+redis = ["dep:redis", "dep:bb8", "dep:bb8-redis"]
+influx = ["dep:influxdb2"]
+#mongo = ["mongodb"]
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
