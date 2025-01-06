@@ -1,0 +1,13 @@
+resources:
+  - configmap.yaml
+  - external-secret.yaml
+#  - ../../../../apps/web/playground/k8s/overlays/dev
+#  - ../../configs/_proto
+
+#secretGenerator:
+#  - name: my-secret
+#    options:
+#      disableNameSuffixHash: true
+#    literals:
+#      - username=admin
+#      - password=secret

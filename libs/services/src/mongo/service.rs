@@ -1,11 +1,11 @@
 use mongodb::{
-    bson::{
-        oid::{self, ObjectId},
-        {doc, to_document, Document},
-    },
-    error::Result,
-    results::DeleteResult,
-    Collection, Database,
+  bson::{
+    oid::{self, ObjectId},
+    {doc, to_document, Document},
+  },
+  error::Result,
+  results::DeleteResult,
+  Collection, Database,
 };
 // use mongodb::error::Result;
 // use mongodb::results::DeleteResult;
@@ -173,44 +173,44 @@ where
 //     Ok(payload)
 // }
 
-#[cfg(test)]
-mod tests {
-    // use utoipa::IntoParams;
-    use super::*;
-    use serde::Deserialize;
-
-    struct Test1 {
-        name: String,
-    }
-    struct CreateTest1 {
-        name: String,
-    }
-    struct UpdateTest1 {
-        name: String,
-    }
-
-    #[derive(Clone, Deserialize, Serialize, Debug)]
-    #[serde(deny_unknown_fields)]
-    pub struct TodoQueryParams {
-        #[serde(skip_serializing_if = "Option::is_none")]
-        completed: Option<bool>,
-        #[serde(skip_serializing_if = "Option::is_none")]
-        text: Option<String>,
-        #[serde(skip_serializing_if = "Option::is_none")]
-        pub limit: Option<String>,
-        #[serde(skip_serializing_if = "Option::is_none")]
-        pub total: Option<String>,
-        #[serde(skip_serializing_if = "Option::is_none")]
-        pub skip: Option<String>,
-        #[serde(skip_serializing_if = "Option::is_none")]
-        pub projection: Option<String>,
-    }
-    #[test]
-    fn generic_routes_basic() {
-        // let db =
-        // let s = delete_by_id::<Test1>(db: &Database, id: &str);
-        // let s = generic_routes::<Test1, CreateTest1, UpdateTest1,TodoQueryParams>();
-        let result = 2 + 2;
-        assert_eq!(result, 4);
-    }
-}
+// #[cfg(test)]
+// mod tests {
+//     // use utoipa::IntoParams;
+//     use super::*;
+//     use serde::Deserialize;
+//
+//     struct Test1 {
+//         name: String,
+//     }
+//     struct CreateTest1 {
+//         name: String,
+//     }
+//     struct UpdateTest1 {
+//         name: String,
+//     }
+//
+//     #[derive(Clone, Deserialize, Serialize, Debug)]
+//     #[serde(deny_unknown_fields)]
+//     pub struct TodoQueryParams {
+//         #[serde(skip_serializing_if = "Option::is_none")]
+//         completed: Option<bool>,
+//         #[serde(skip_serializing_if = "Option::is_none")]
+//         text: Option<String>,
+//         #[serde(skip_serializing_if = "Option::is_none")]
+//         pub limit: Option<String>,
+//         #[serde(skip_serializing_if = "Option::is_none")]
+//         pub total: Option<String>,
+//         #[serde(skip_serializing_if = "Option::is_none")]
+//         pub skip: Option<String>,
+//         #[serde(skip_serializing_if = "Option::is_none")]
+//         pub projection: Option<String>,
+//     }
+//     #[test]
+//     fn generic_routes_basic() {
+//         // let db =
+//         // let s = delete_by_id::<Test1>(db: &Database, id: &str);
+//         // let s = generic_routes::<Test1, CreateTest1, UpdateTest1,TodoQueryParams>();
+//         let result = 2 + 2;
+//         assert_eq!(result, 4);
+//     }
+// }
