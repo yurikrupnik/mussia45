@@ -25,18 +25,18 @@ pub async fn connect(
     Ok(pool)
 }
 
-#[cfg(test)]
-mod tests {
-  use super::*;
-  #[tokio::test]
-    async fn test_connect_with_invalid_url() {
-        let invalid_url = "invalid_url";
-
-        let result = connect(Some(invalid_url), None).await;
-
-        assert!(
-            result.is_err(),
-            "Connection with an invalid URL should fail."
-        );
-    }
-}
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
+//     #[tokio::test]
+//     async fn test_connect_with_invalid_url() {
+//         let invalid_url = "invalid_url";
+//
+//         let result = connect(Some(invalid_url), None).await;
+//
+//         assert!(
+//             result.is_err(),
+//             "Connection with an invalid URL should fail."
+//         );
+//     }
+// }

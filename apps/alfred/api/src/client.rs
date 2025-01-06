@@ -18,8 +18,8 @@ use tokio_tungstenite::tungstenite::Utf8Bytes;
 
 // we will use tungstenite for websocket client impl (same library as what axum is using)
 use tokio_tungstenite::{
-  connect_async,
-  tungstenite::protocol::{frame::coding::CloseCode, CloseFrame, Message},
+    connect_async,
+    tungstenite::protocol::{frame::coding::CloseCode, CloseFrame, Message},
 };
 
 const N_CLIENTS: usize = 2; //set to desired number

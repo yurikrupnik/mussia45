@@ -31,9 +31,9 @@ pub async fn connect(database: &str) -> Result<Database, Error> {
 
 #[cfg(test)]
 mod tests {
-  use super::*;
+    use super::*;
 
-  #[tokio::test]
+    #[tokio::test]
     async fn test_connect() -> Result<(), Error> {
         let db_name = "test_db";
         let db = connect(db_name).await?;

@@ -1,7 +1,7 @@
 use axum::{
-  extract::Json,
-  http::StatusCode,
-  response::{IntoResponse, Response},
+    extract::Json,
+    http::StatusCode,
+    response::{IntoResponse, Response},
 };
 use serde::Serialize;
 use sqlx::postgres::PgQueryResult;

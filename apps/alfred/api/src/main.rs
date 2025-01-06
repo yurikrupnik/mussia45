@@ -19,19 +19,19 @@
 mod client;
 
 use axum::{
-  body::Bytes,
-  extract::ws::{Message, Utf8Bytes, WebSocket, WebSocketUpgrade},
-  response::IntoResponse,
-  routing::any,
-  Router,
+    body::Bytes,
+    extract::ws::{Message, Utf8Bytes, WebSocket, WebSocketUpgrade},
+    response::IntoResponse,
+    routing::any,
+    Router,
 };
 use axum_extra::TypedHeader;
 
 use std::ops::ControlFlow;
 use std::{net::SocketAddr, path::PathBuf};
 use tower_http::{
-  services::ServeDir,
-  trace::{DefaultMakeSpan, TraceLayer},
+    services::ServeDir,
+    trace::{DefaultMakeSpan, TraceLayer},
 };
 
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};

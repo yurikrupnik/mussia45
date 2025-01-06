@@ -1,0 +1,20 @@
+resources:
+  - ../../base
+
+patches:
+  - path: configmap-patch.yaml
+    target:
+      kind: ConfigMap
+      name: app-config
+#  - secret-patch.yaml
+#patchesJson6902:
+#  - target:
+#      version: v1
+#      kind: ConfigMap
+#      name: app-config
+#    path: patch.json
+#  - target:
+#      version: v1
+#      kind: Secret
+#      name: my-secret
+#    path: secret-patch.json

@@ -1,0 +1,22 @@
+resources:
+  - ../../base
+
+patches:
+  - path: configmap-patch.yaml
+    target:
+      kind: ConfigMap
+      name: app-config
+  - target:
+      kind: SecretStore
+      name: secret-store
+    patch: |
+      - op: replace
+        path: /spec/provider/gcpsm/projectID
+        value: arisd
+  - target:
+      kind: ExternalSecret
+      name: configs
+    patch: |
+      - op: replace
+        path: /spec/dataFrom/extract[_]/key
+        value: test1

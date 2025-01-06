@@ -5,10 +5,10 @@
 //! ```
 
 use axum::{
-  http::StatusCode,
-  response::{IntoResponse, Response},
-  routing::get,
-  Router,
+    http::StatusCode,
+    response::{IntoResponse, Response},
+    routing::get,
+    Router,
 };
 
 #[tokio::main]

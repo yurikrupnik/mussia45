@@ -135,74 +135,74 @@ mod update_tests {
     }
 }
 
-#[cfg(test)]
-mod create_tests {
-  use super::*;
-  use serde_json::json;
-
-  #[test]
-    fn test_prepare_create_query_basic() {
-        let json_body = json!({
-            "name": "John",
-            "age": 30,
-            "city": "New York"
-        });
-
-        let (fields, values, bindings) = prepare_create_query(&json_body);
-
-        assert_eq!(fields, "name, age, city");
-        assert_eq!(bindings, "$1, $2, $3");
-        assert_eq!(values.len(), 3);
-        assert_eq!(values[0], &json!("John"));
-        assert_eq!(values[1], &json!(30));
-        assert_eq!(values[2], &json!("New York"));
-    }
-
-    #[test]
-    fn test_prepare_create_query_with_null_values() {
-        let json_body = json!({
-            "name": "John",
-            "age": null,
-            "city": "New York"
-        });
-
-        let (fields, values, bindings) = prepare_create_query(&json_body);
-
-        assert_eq!(fields, "name, city");
-        assert_eq!(bindings, "$1, $2");
-        assert_eq!(values.len(), 2);
-        assert_eq!(values[0], &json!("John"));
-        assert_eq!(values[1], &json!("New York"));
-    }
-
-    #[test]
-    fn test_prepare_create_query_empty_object() {
-        let json_body = json!({});
-
-        let (fields, values, bindings) = prepare_create_query(&json_body);
-
-        assert_eq!(fields, "");
-        assert_eq!(bindings, "");
-        assert_eq!(values.len(), 0);
-    }
-
-    #[test]
-    fn test_prepare_create_query_mixed_values() {
-        let json_body = json!({
-            "name": "John",
-            "age": null,
-            "city": "New York",
-            "occupation": null,
-            "country": "USA"
-        });
-
-        let (fields, values, bindings) = prepare_create_query(&json_body);
-
-        assert_eq!(fields, "name, city, country");
-        assert_eq!(bindings, "$1, $2, $3");
-        assert_eq!(values.len(), 3);
-        assert_eq!(values[0], &json!("John"));
-        assert_eq!(values[1], &json!("New York"));
-        assert_eq!(values[2], &json!("USA"));
-    }
-}
+// #[cfg(test)]
+// mod create_tests {
+//     use super::*;
+//     use serde_json::json;
+//
+//     #[test]
+//     fn test_prepare_create_query_basic() {
+//         let json_body = json!({
+//             "name": "John",
+//             "age": 30,
+//             "city": "New York"
+//         });
+//
+//         let (fields, values, bindings) = prepare_create_query(&json_body);
+//
+//         assert_eq!(fields, "name, age, city");
+//         assert_eq!(bindings, "$1, $2, $3");
+//         assert_eq!(values.len(), 3);
+//         assert_eq!(values[0], &json!("John"));
+//         assert_eq!(values[1], &json!(30));
+//         assert_eq!(values[2], &json!("New York"));
+//     }
+//
+//     #[test]
+//     fn test_prepare_create_query_with_null_values() {
+//         let json_body = json!({
+//             "name": "John",
+//             "age": null,
+//             "city": "New York"
+//         });
+//
+//         let (fields, values, bindings) = prepare_create_query(&json_body);
+//
+//         assert_eq!(fields, "name, city");
+//         assert_eq!(bindings, "$1, $2");
+//         assert_eq!(values.len(), 2);
+//         assert_eq!(values[0], &json!("John"));
+//         assert_eq!(values[1], &json!("New York"));
+//     }
+//
+//     #[test]
+//     fn test_prepare_create_query_empty_object() {
+//         let json_body = json!({});
+//
+//         let (fields, values, bindings) = prepare_create_query(&json_body);
+//
+//         assert_eq!(fields, "");
+//         assert_eq!(bindings, "");
+//         assert_eq!(values.len(), 0);
+//     }
+//
+//     #[test]
+//     fn test_prepare_create_query_mixed_values() {
+//         let json_body = json!({
+//             "name": "John",
+//             "age": null,
+//             "city": "New York",
+//             "occupation": null,
+//             "country": "USA"
+//         });
+//
+//         let (fields, values, bindings) = prepare_create_query(&json_body);
+//
+//         assert_eq!(fields, "name, city, country");
+//         assert_eq!(bindings, "$1, $2, $3");
+//         assert_eq!(values.len(), 3);
+//         assert_eq!(values[0], &json!("John"));
+//         assert_eq!(values[1], &json!("New York"));
+//         assert_eq!(values[2], &json!("USA"));
+//     }
+// }

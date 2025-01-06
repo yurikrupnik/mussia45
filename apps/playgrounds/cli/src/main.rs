@@ -17,11 +17,11 @@ async fn main() -> Result<()> {
 
 #[cfg(test)]
 mod test {
-  use super::*;
-  use clap::CommandFactory;
-  use commands::subcommand::Args;
+    use super::*;
+    use clap::CommandFactory;
+    use commands::subcommand::Args;
 
-  #[test]
+    #[test]
     fn verify_cli() {
         Args::command().debug_assert();
     }
