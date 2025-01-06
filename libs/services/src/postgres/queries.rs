@@ -63,9 +63,9 @@ pub fn prepare_create_query(json_body: &Value) -> (String, Vec<&Value>, String) 
 
 #[cfg(test)]
 mod update_tests {
-  use super::*;
-  use serde_json::json;
-  // #![feature(test)]
+    use super::*;
+    use serde_json::json;
+    // #![feature(test)]
     // extern crate test;
     // use test::Bencher;
     // #[bench]
@@ -137,10 +137,10 @@ mod update_tests {
 
 #[cfg(test)]
 mod create_tests {
-  use super::*;
-  use serde_json::json;
+    use super::*;
+    use serde_json::json;
 
-  #[test]
+    #[test]
     fn test_prepare_create_query_basic() {
         let json_body = json!({
             "name": "John",

@@ -27,8 +27,8 @@ pub async fn connect(
 
 #[cfg(test)]
 mod tests {
-  use super::*;
-  #[tokio::test]
+    use super::*;
+    #[tokio::test]
     async fn test_connect_with_invalid_url() {
         let invalid_url = "invalid_url";
 

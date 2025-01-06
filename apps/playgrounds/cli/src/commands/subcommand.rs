@@ -4,10 +4,10 @@ use super::super::errors::Errors;
 // use crate::commands::{TaskAction, TaskSubcommand};
 // use crate::commands::{UserAction, UsersSubcommand};
 use crate::commands::{
-  cluster::{ClusterAction, ClusterSubcommand},
-  system::{SystemAction, SystemSubcommand},
-  task::{TaskAction, TaskSubcommand},
-  user::{UserAction, UsersSubcommand},
+    cluster::{ClusterAction, ClusterSubcommand},
+    system::{SystemAction, SystemSubcommand},
+    task::{TaskAction, TaskSubcommand},
+    user::{UserAction, UsersSubcommand},
 };
 use clap::Parser;
 use futures::stream::{StreamExt, TryStreamExt};
@@ -59,8 +59,8 @@ pub enum Subcommands {
 use k8s_openapi::api::apps::v1::Deployment;
 use k8s_openapi::api::core::v1::Pod;
 use kube::{
-  api::{Api, ListParams, ResourceExt},
-  Client,
+    api::{Api, ListParams, ResourceExt},
+    Client,
 };
 async fn list_pods() -> Result<Api<Pod>, Box<dyn std::error::Error>> {
     let client = Client::try_default().await?;

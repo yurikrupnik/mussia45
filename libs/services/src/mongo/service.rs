@@ -1,11 +1,11 @@
 use mongodb::{
-  bson::{
-    oid::{self, ObjectId},
-    {doc, to_document, Document},
-  },
-  error::Result,
-  results::DeleteResult,
-  Collection, Database,
+    bson::{
+        oid::{self, ObjectId},
+        {doc, to_document, Document},
+    },
+    error::Result,
+    results::DeleteResult,
+    Collection, Database,
 };
 // use mongodb::error::Result;
 // use mongodb::results::DeleteResult;
@@ -175,11 +175,11 @@ where
 
 #[cfg(test)]
 mod tests {
-  // use utoipa::IntoParams;
-  use super::*;
-  use serde::Deserialize;
+    // use utoipa::IntoParams;
+    use super::*;
+    use serde::Deserialize;
 
-  struct Test1 {
+    struct Test1 {
         name: String,
     }
     struct CreateTest1 {
