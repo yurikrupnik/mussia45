@@ -1,4 +1,4 @@
-mod connector;
-mod queries;
-mod results;
-mod service;
+pub mod connector;
+pub mod queries;
+pub mod results;
+pub mod service;
