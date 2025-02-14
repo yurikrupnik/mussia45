@@ -9,9 +9,9 @@
     "solid-js": "^1.9.3"
   },
   "devDependencies": {
-    "@nx/web": "20.3.0",
-    "@nx/workspace": "20.3.0",
-    "nx": "20.3.0",
+    "@nx/web": "20.4.4",
+    "@nx/workspace": "20.4.4",
+    "nx": "20.4.4",
     "playwright": "^1.49.1",
     "solid-devtools": "^0.33.0",
     "vite-plugin-solid": "^2.11.0",
